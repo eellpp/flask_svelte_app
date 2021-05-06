@@ -4,3 +4,4 @@
  
 Svelte is purely a compiler, that converts your application into ideal JavaScript code when you build the application for production. Meaning it won’t inject any overhead code to run in the browser when your application is running to update the DOM.  
 
+Reference: https://blog.bitsrc.io/react-vs-sveltejs-the-war-between-virtual-and-real-dom-59cbebbab9e9  
