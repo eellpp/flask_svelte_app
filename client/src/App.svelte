@@ -67,5 +67,5 @@
 </nav>
 
 <main>
-	<Router {routes} />
+	<Router {routes}/>
 </main>
