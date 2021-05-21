@@ -1,2 +1,4 @@
+sqlalchemy
+psycopg2-binary
 Flask==1.1.1
 Werkzeug==0.16.0
