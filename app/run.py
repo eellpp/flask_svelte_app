@@ -3,16 +3,13 @@ from flask import Flask, send_from_directory, _app_ctx_stack, jsonify, url_for
 from flask_cors import CORS
 from sqlalchemy.orm import scoped_session
 
-from . import models
-from .database import SessionLocal, engine
-
-models.Base.metadata.create_all(bind=engine)
+from app import models
+from app.database import SessionLocal, init_db
 
 app = Flask(__name__)
 CORS(app)
 app.session = scoped_session(SessionLocal, scopefunc=_app_ctx_stack.__ident_func__)
 
-app = Flask(__name__)
 
 
 @app.route("/db")
@@ -23,7 +20,9 @@ def main():
 @app.route("/records/")
 def show_records():
     records = app.session.query(models.Record).all()
-    return jsonify([record.to_dict() for record in records])
+    rows = [record.to_dict() for record in records]
+    columns = list(rows[0].keys()) if rows else []
+    return jsonify({"COLUMN_NAMES":columns,"ROWS":rows})
 
 
 @app.teardown_appcontext
@@ -46,4 +45,5 @@ def hello():
     return str(random.randint(0, 100))
 
 if __name__ == "__main__":
+    init_db()
     app.run(port=3000)

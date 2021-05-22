@@ -22,7 +22,26 @@ SENTENCES : [
 }
 ] ;
 
+const SARS_TABLE= {
+COLUMN_NAMES: ["cases","country","date","deaths","id","recoveries"],
+ROWS: [{cases:1,country:"Germany",date:"2003-03-17",deaths:0,"id":7615,recoveries:0},
+{cases:8,country:"Canada",date:"2003-03-17",deaths:2,"id":7616,recoveries:0},
+{cases:20,country:"Singapore",date:"2003-03-17",deaths:0,"id":7617,recoveries:0},
+{cases:95,country:"Hong Kong SAR, China",date:"2003-03-17",deaths:1,"id":7618,recoveries:0},
+{cases:2,country:"Switzerland",date:"2003-03-17",deaths:0,"id":7619,recoveries:0},
+{cases:1,country:"Thailand",date:"2003-03-17",deaths:0,"id":7620,recoveries:0},
+{cases:40,country:"Viet Nam",date:"2003-03-17",deaths:1,"id":7621,recoveries:0},
+{cases:2,country:"Germany",date:"2003-03-18",deaths:0,"id":7622,recoveries:0},
+{cases:8,country:"Canada",date:"2003-03-18",deaths:2,"id":7623,recoveries:0},
+{cases:0,country:"China",date:"2003-03-18",deaths:0,"id":7624,recoveries:0},
+{cases:23,country:"Singapore",date:"2003-03-18",deaths:0,"id":7625,recoveries:0},
+{cases:123,country:"Hong Kong SAR, China",date:"2003-03-18",deaths:1,"id":7626,recoveries:0},
+{cases:3,country:"Taiwan, China",date:"2003-03-18",deaths:0,"id":7627,recoveries:0}
+]
+};
+
 const MOCK_DATA = {
-BOOKS
+BOOKS,
+SARS_TABLE
 };
 export default MOCK_DATA;

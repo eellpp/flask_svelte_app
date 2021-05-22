@@ -23,7 +23,9 @@
       <a class="navbar-item" href="/">
         Home
       </a>
-
+      <a class="navbar-item" href="#/dataset">
+        Dataset
+      </a>
       <a class="navbar-item" href="#/lorem/2">
         Lorem
       </a>

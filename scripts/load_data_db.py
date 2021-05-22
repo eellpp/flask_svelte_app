@@ -5,11 +5,10 @@ import csv
 import datetime
 
 from app import models
-from app.database import SessionLocal, engine
+from app.database import SessionLocal,init_db
 
 db = SessionLocal()
 
-models.Base.metadata.create_all(bind=engine)
 
 def insert():
     with open("sars_2003_complete_dataset_clean.csv", "r") as f:
@@ -30,4 +29,5 @@ def insert():
     db.close()
 
 if __name__ == '__main__':
+    init_db()
     insert()
