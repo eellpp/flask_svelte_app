@@ -4,3 +4,4 @@ client/public/build/
 **/__pycache__/
 venv
 .DS_Store
+scripts/.ipynb_checkpoints/

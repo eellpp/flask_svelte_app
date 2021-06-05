@@ -5,6 +5,7 @@ import Dataset from './routes/Dataset.svelte';
 import Lorem from './routes/Lorem.svelte';
 import NotFound from './routes/NotFound.svelte';
 import DATA from "./Data/data";
+import FormTutorial from "./routes/tutorial/FormTutorial.svelte"
 
 export default {
     '/':  wrap({
@@ -14,6 +15,9 @@ export default {
             books: DATA.BOOKS,
             table:DATA.SARS_TABLE
         }
+    }),
+    '/tutorial/form':  wrap({
+        component: FormTutorial
     }),
     '/dataset':  wrap({
         component: Dataset
