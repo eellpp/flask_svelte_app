@@ -33,10 +33,18 @@
         <a class="navbar-link">
           Tutorials
         </a>
-
         <div class="navbar-dropdown">
           <a class="navbar-item" href="#/tutorial/form">
             Form
+          </a>
+          <a class="navbar-item" href="#/tutorial/dogbreed">
+            DogBreed
+          </a>
+          <a class="navbar-item" href="#/tutorial/travelchecklist">
+            TravelChecklistApp
+          </a>
+          <a class="navbar-item" href="#/tutorial/scratchpad">
+            Scratchpad
           </a>
         </div>
       </div>
