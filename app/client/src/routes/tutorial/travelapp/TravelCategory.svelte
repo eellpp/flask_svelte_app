@@ -1,27 +1,36 @@
 <script>
   import TravelItem from "./TravelItem.svelte";
   import { blurOnKey, getUID } from "./Utils";
+  import {createEventDispatcher} from 'svelte';
+  const dispatch = createEventDispatcher();
   export let category;
   let item_name;
   let is_packed = false;
   $: items = category.items;
 
   function addItem() {
-    const is_duplicate = category.items.some(
+    const is_duplicate = Object.values(category.items).some(
       (item) => item.name.toLowerCase() === item_name.toLowerCase()
     );
     if (!is_duplicate) {
       const item = { id: getUID(), name: item_name, is_packed: is_packed };
 
-      const index = category.items.length;
+      const index = item.id;
       category.items[index] = item;
       category = category;
     }
     console.log(category);
     item_name = "";
+    dispatch('persist')
   }
   function deleteCategory(){
     console.log("Deleting category " + category.name)
+  }
+
+  function deleteItem(item){
+    delete category.items[item.id];
+    category = category;
+    dispatch('persist')
   }
 </script>
 
@@ -32,7 +41,7 @@
     </div>
     <span
       class="icon is-small is-right"
-      on:click={deleteCategory}
+      on:click={dispatch('delete',category)}
       style="pointer-events: all;cursor: pointer;">
       <i class="fas fa-trash-alt" />
     </span>
@@ -62,7 +71,7 @@
       <a class="button is-info" on:click={addItem}> AddItem </a>
     </div>
   </div>
-  {#each items as item}
-    <TravelItem bind:item />
+  {#each Object.values(items) as item}
+    <TravelItem bind:item on:delete={() => deleteItem(item)}/>
   {/each}
 </div>

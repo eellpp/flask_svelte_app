@@ -1,5 +1,5 @@
 <script>
-
+    import Template from "./../Template.svelte";
     import {onMount} from 'svelte'
 
     // get the list of breeds
@@ -38,6 +38,15 @@
 
 </script>
 
+<Template>
+  <div class="buttons" slot="Login">
+    <a class="button is-primary" href="">
+      <strong>Sign up</strong>
+    </a>
+    <a class="button is-light"> Log in </a>
+  </div>
+
+  <div slot="Body">
 <section class="section">
     <div class="column is-one-third">
         <div class="field">
@@ -109,3 +118,5 @@
     {/await}
         
 </section>
+</div>
+</Template>

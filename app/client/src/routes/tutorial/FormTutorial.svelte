@@ -1,4 +1,5 @@
 <script>
+    import Template from "./../Template.svelte";
     let greetings = [
         { country: "US", message: "Aloha" },
         { country: "India", message: "Namaskaram" },
@@ -39,6 +40,15 @@
     //######################################
 </script>
 
+<Template>
+    <div class="buttons" slot="Login">
+      <a class="button is-primary" href="">
+        <strong>Sign up</strong>
+      </a>
+      <a class="button is-light"> Log in </a>
+    </div>
+  
+    <div slot="Body">
 <section class="hero is-success is-small">
     <div class="hero-body">
         <p>
@@ -111,3 +121,5 @@
         </section>
     </div>
 </div>
+</div>
+</Template>

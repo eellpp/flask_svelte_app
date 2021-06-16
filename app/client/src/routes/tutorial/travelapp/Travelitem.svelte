@@ -1,14 +1,11 @@
 <script>
     import { blurOnKey } from "./Utils";
+    import {createEventDispatcher} from 'svelte';
     let yes = false;
-
+    const dispatch = createEventDispatcher();
     export let item;
     let editing = false;
     // item has name,category,ispacked fields
-
-    function deleteItem() {
-        console.log("Deleting the item " + item.name);
-    }
 </script>
 
 <div class="control">
@@ -36,7 +33,7 @@
     </label>
     <span
         class="icon is-small is-right"
-        on:click={deleteItem}
+        on:click={() => dispatch('delete')}
         style="pointer-events: all;cursor: pointer;">
         <i class="fas fa-trash-alt" />
     </span>
